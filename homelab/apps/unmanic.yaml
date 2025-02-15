@@ -4,7 +4,7 @@ metadata:
   name: unmanic
   namespace: argocd
 spec:
-  project: homelab
+  project: default
   source:
     repoURL: "https://vhdirk.github.io/helm-charts"
     targetRevision: "0.1.4"

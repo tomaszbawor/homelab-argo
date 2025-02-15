@@ -7,11 +7,12 @@
 ## Installing argocd
 
 ```bash
-helm repo add argo https://argoproj.github.io/argo-helm
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
-and then 
+Adding ingress assuming you have nginx
 
 ```bash
-helm install argo-cd argo/argo-cd --version 7.8.2
+kubectl apply -f argo/ingress.yaml
 ```
