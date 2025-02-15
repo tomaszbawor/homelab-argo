@@ -6,13 +6,9 @@
 
 ## Installing argocd
 
-```bash
-kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+I am installing argo by argocd-autopilot
+
+# Port forward
 ```
-
-Adding ingress assuming you have nginx
-
-```bash
-kubectl apply -f argo/ingress.yaml
+kubectl port-forward -n argocd svc/argocd-server 8080:80
 ```
