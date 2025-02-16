@@ -19,5 +19,6 @@ ingress:
 persistentVolumeClaim:
   enabled: true
   storageClass: "longhorn"
+  size: "2Gi"
   accessModes:
     - ReadWriteMany
