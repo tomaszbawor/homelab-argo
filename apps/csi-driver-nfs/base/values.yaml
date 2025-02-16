@@ -1,5 +1,4 @@
-values:
-  controller:
-    enabled: true
-  node:
-    enabled: true
+controller:
+  enabled: true
+node:
+  enabled: true
