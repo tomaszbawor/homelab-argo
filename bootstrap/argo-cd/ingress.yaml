@@ -9,7 +9,7 @@ metadata:
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: ArgoCD Dashboard
     gethomepage.dev/group: Tools
-    gethomepage.dev/icon: argocd.png
+    gethomepage.dev/icon: argo-cd.png
     gethomepage.dev/name: ArgoCD
     gethomepage.dev/pod-selector: " "
 spec:
