@@ -126,7 +126,7 @@ bazarr:
     accessMode: ReadWriteMany
 radarr:
   image:
-    tag: 5.14.0
+    tag: 5.18.4
     repository: lscr.io/linuxserver/radarr
   ingress:
     enabled: true
