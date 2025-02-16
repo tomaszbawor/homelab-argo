@@ -3,8 +3,8 @@ kind: Kustomization
 
 helmCharts:
   - name: csi-driver-nfs
-    repo: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/chart
-    releaseName: unmanic
+    repo: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+    releaseName: csi-driver-nfs
     namespace: kube-system
     version: "4.10.0"
     valuesFile: values.yaml
