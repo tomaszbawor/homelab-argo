@@ -5,7 +5,7 @@ resources:
   - ./ns.yaml
   - ./media-pv.yaml
   - ./media-pvc.yaml
-  - ./qbittorrent-ingress-patch.yaml
+  - ./qbittorrent-ingress.yaml
 
 helmCharts:
   - name: servarr
@@ -14,10 +14,3 @@ helmCharts:
     namespace: servarr
     version: "1.0.7"
     valuesFile: values.yaml
-
-patches:
-  - target:
-      kind: Ingress
-      name: servarr-qbittorrent
-      namespace: servarr
-    path: ./qbittorrent-ingress-patch.yaml

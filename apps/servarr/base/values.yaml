@@ -39,20 +39,7 @@ sonarr:
     accessMode: ReadWriteMany
 qbittorrent:
   ingress:
-    enabled: true
-    className: "nginx"
-    annotations:
-      nginx.ingress.kubernetes.io/rewrite-target: /
-      nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    hosts:
-      - host: qbittorrent.entropymaker.com
-        paths:
-          - path: /
-            pathType: ImplementationSpecific
-    tls:
-      - hosts:
-          - "qbittorrent.entropymaker.com"
-        secretName: entropymaker-com-tls
+    enabled: false
   persistence:
     storageClass: longhorn
     size: 2Gi
