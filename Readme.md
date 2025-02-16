@@ -41,3 +41,12 @@ kubectl apply -f secret.yaml
 ```
 
 This will manually put secret into the cluster and enable cert manager to issue a cert request. 
+
+# Validating outputs
+
+In order to check the output of the kustomize and helmchart we can run command in the overlay folder of the application that we want to check. 
+```bash
+kustomize build --enable-helm
+```
+This will result in creation of the `chart` folder in our application. 
+This folder will contain all of the resulted helmcharts with kustomize modification that we applied.
