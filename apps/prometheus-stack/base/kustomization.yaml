@@ -10,9 +10,10 @@ helmCharts:
     releaseName: prometheus-stack
     namespace: prometheus-stack
     version: "69.3.1"
-    valuesFile: values.yaml
+    valuesFile: ./prom-stack-values.yaml
   - name: loki
     repo: https://grafana.github.io/helm-charts
     releaseName: loki
     namespace: prometheus-stack
     version: "6.27.0"
+    valuesFile: ./loki-values.yaml
