@@ -21,10 +21,3 @@ persistentVolumeClaim:
   storageClass: "longhorn"
   accessModes:
     - ReadWriteMany
-extraEnvVars:
-  PUID: "1024"
-  PGID: "1024"
-  PIHOLE_UID: "1024"
-  PIHOLE_GID: "1024"
-  WEB_UID: "1024"
-  WEB_GID: "1024"
