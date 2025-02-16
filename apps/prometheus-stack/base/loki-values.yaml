@@ -1,6 +1,7 @@
 deploymentMode: SimpleBinary
 
 loki:
+  auth_enabled: false
   useTestSchema: true
   commonConfig:
     replication_factor: 1
