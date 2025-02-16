@@ -8,9 +8,14 @@ loki:
   storage:
     type: filesystem
 
+  rulerConfig:
+    storage:
+      type: local
+
 singleBinary:
   replicas: 1
   persistence:
+    enabled: true
     storageClass: longhorn
     size: 50Gi
 # Using sigle binary mode , disabling read, write replicas for scalable mode
