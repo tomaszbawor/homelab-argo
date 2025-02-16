@@ -28,6 +28,16 @@ kubectl port-forward -n argocd svc/argocd-server 8080:80
 
 # TODO: 
 
-Currently I do not know how to store sops encrypted json files to be interpreted by argo. Temporary we can add secrets by hand. 
+Currently I do not know how to store sops encrypted JSON files to be interpreted by Argo-CD. Temporary we can add secrets by hand. 
 
 In the future I would like to encrypt them using SOPS
+
+Currently `cloudflare-api-token.yaml` is needed for the SSL cert generation
+In order to manually do that you have to decrypt it using sops 
+
+```bash
+sops -d cloudflare-api-token.yaml > secret.yaml
+kubectl apply -f secret.yaml
+```
+
+This will manually put secret into the cluster and enable cert manager to issue a cert request. 
