@@ -1,0 +1,11 @@
+{
+  "appName": "ingrss-nginx",
+  "userGivenName": "ingrss-nginx",
+  "destNamespace": "ingrss-nginx",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/nginx/overlays/system",
+  "srcRepoURL": "https://github.com/tomaszbawor/homelab-argo.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}

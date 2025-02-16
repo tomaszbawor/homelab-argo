@@ -1,0 +1,13 @@
+controller:
+  service:
+    type: LoadBalancer
+    loadBalancerIP: 192.168.1.200
+    nodePorts:
+      http: 32080
+      https: 32443
+  hostNetwork: true
+  ingressClassResource:
+    name: nginx
+    enabled: true
+  admissionWebhooks:
+    enabled: false
