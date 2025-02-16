@@ -1,0 +1,175 @@
+jellyfin:
+  service:
+    externalTrafficPolicy: null
+  ingress:
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts: ["jellyfin.entropymaker.com"]
+    tls:
+      - hosts:
+          - "jellyfin.entropymaker.com"
+        secretName: entropymaker-com-tls
+    enabled: true
+  persistence:
+    config:
+      storageClass: longhorn
+      size: 2Gi
+      accessMode: ReadWriteMany
+    media:
+      existingClaim: servarr-jellyfin-media
+sonarr:
+  ingress:
+    enabled: true
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+      - host: sonarr.entropymaker.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - "sonarr.entropymaker.com"
+        secretName: entropymaker-com-tls
+  persistence:
+    storageClass: longhorn
+    size: 2Gi
+    accessMode: ReadWriteMany
+qbittorrent:
+  ingress:
+    enabled: true
+    className: "nginx"
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+      - host: qbittorrent.entropymaker.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - "qbittorrent.entropymaker.com"
+        secretName: entropymaker-com-tls
+  persistence:
+    storageClass: longhorn
+    size: 2Gi
+    accessMode: ReadWriteMany
+prowlarr:
+  ingress:
+    enabled: true
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+      - host: prowlarr.entropymaker.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - "prowlarr.entropymaker.com"
+        secretName: entropymaker-com-tls
+  persistence:
+    storageClass: longhorn
+    size: 2Gi
+    accessMode: ReadWriteMany
+jellyseerr:
+  ingress:
+    enabled: true
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+      - host: jellyseerr.entropymaker.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - "jellyseerr.entropymaker.com"
+        secretName: entropymaker-com-tls
+  persistence:
+    storageClass: longhorn
+    size: 2Gi
+    accessMode: ReadWriteMany
+bazarr:
+  ingress:
+    enabled: true
+    className: "nginx"
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+      - host: bazarr.entropymaker.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - "bazarr.entropymaker.com"
+        secretName: entropymaker-com-tls
+  persistence:
+    storageClass: longhorn
+    size: 2Gi
+    accessMode: ReadWriteMany
+radarr:
+  ingress:
+    enabled: true
+    className: "nginx"
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+      - host: radarr.entropymaker.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - "radarr.entropymaker.com"
+        secretName: entropymaker-com-tls
+  persistence:
+    storageClass: longhorn
+    size: 2Gi
+    accessMode: ReadWriteMany
+lidarr:
+  ingress:
+    enabled: true
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+      - host: lidarr.entropymaker.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - "lidarr.entropymaker.com"
+        secretName: entropymaker-com-tls
+  persistence:
+    storageClass: longhorn
+    size: 2Gi
+    accessMode: ReadWriteMany
+readarr:
+  ingress:
+    enabled: true
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+      - host: readarr.entropymaker.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - "readarr.entropymaker.com"
+        secretName: entropymaker-com-tls
+  persistence:
+    storageClass: longhorn
+    size: 2Gi
+    accessMode: ReadWriteMany

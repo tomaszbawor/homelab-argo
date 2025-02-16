@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ./ns.yaml
+  - ./media-pv.yaml
+  - ./media-pvc.yaml
+
+helmCharts:
+  - name: servarr
+    repo: https://charts.kubito.dev
+    releaseName: servarr
+    namespace: servarr
+    version: "1.0.7"
+    valuesFile: values.yaml
