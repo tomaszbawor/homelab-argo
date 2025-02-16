@@ -9,5 +9,6 @@ controller:
   ingressClassResource:
     name: nginx
     enabled: true
+    default: true
   admissionWebhooks:
     enabled: false
