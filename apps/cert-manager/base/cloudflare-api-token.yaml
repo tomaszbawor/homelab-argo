@@ -1,0 +1,29 @@
+# TODO: Find way to include this in argocd and auto decrypt
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cloudflare-api-token
+  namespace: cert-manager
+type: Opaque
+data:
+  api-token: ENC[AES256_GCM,data:+z1Xy22GDqAih/ogvpi8D+RbhyxjmsS02yMQbnSqcSQKnX8IvoQSAUmeqMcbSjZe/Le1x+S9N5w=,iv:MWfB6kfxVL5un9MeWyX469UlVZZgaUeILo2tAQljozY=,tag:CkIv/nCPh5AXxO+mNw9G/w==,type:str]
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1wvz78dtkqrr79qpxxs06e22zxv28raj04hzvmxwwp53ftgx8nejqhl8xkk
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBKamp6RlgzRXZ2QVdnSHVm
+        OXhSN2EvN2lQWURRaXFQUDdGK25yQ3NCMlFnCmMzcC9HSHJ0RTFhaWh0TnhWR2lO
+        Y2dHNGN6YVlkMTFqNEdDZHhDdVJzbmMKLS0tIGptaytXMFhFcTk4TThWZ2M5UWZt
+        bm5Ka0UybElSMUxzbitYb1N2TUU4WmMKYcrHdrf9fryroOrZTlCW9IhfoGv1CGXE
+        DLPvAn83eJ8k/oDvrLxivOiV8VQzjPCKmGsSMLL3kG0jVEC4NC502w==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-01-29T22:18:41Z"
+  mac: ENC[AES256_GCM,data:yRXIN5E8Etv1/O2rp9nkK7Gy8jhSSmiNnXyEg6xBhKfzPcAKkQAbKoqqUvMBtqcC+nO/9l/Iek4Gi+B9LePryzTAuCzDvhSYQGThZfBRtktWRsUSoqCb7coCAluwda7bMUJX1bjyvVOit6Csxr6gtz5Pp1ro1E66sP6wc6OU7uY=,iv:hwhsg/k3WNgs6sK/422o2np/szPj3NBUyWCmaEH0YKw=,tag:vHFMExn+iK3Byg1LmJ5g0w==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.3

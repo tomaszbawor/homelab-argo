@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: entropymaker-cert
+  namespace: cert-manager
+spec:
+  secretName: entropymaker-com-tls
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
+  dnsNames:
+    - "entropymaker.com"
+    - "*.entropymaker.com"
+  secretTemplate:
+    annotations:
+      # Auto create copy of secret in other namespaces
+      reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
+      reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
