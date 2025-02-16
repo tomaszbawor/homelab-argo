@@ -1,0 +1,11 @@
+{
+  "appName": "longhorn",
+  "userGivenName": "longhorn",
+  "destNamespace": "longhorn-system",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/longhorn/overlays/system",
+  "srcRepoURL": "https://github.com/tomaszbawor/homelab-argo.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
