@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ./cluster-role-binding.yaml
+  - ./cluster-role.yaml
+  - ./config-map.yaml
+  - ./deployment.yaml
+  - ./ingress.yaml
+  - ./ns.yaml
+  - ./service-account.yaml
+  - ./service-account.yaml
+  - ./svc-account-token-secret.yaml
