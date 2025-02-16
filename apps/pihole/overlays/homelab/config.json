@@ -1,0 +1,11 @@
+{
+  "appName": "pihole",
+  "userGivenName": "pihole",
+  "destNamespace": "pihole",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/pihole/overlays/homelab",
+  "srcRepoURL": "https://github.com/tomaszbawor/homelab-argo.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
