@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   - ./ns.yaml
-    ./ingress-class.yaml
+  - ./ingress-class.yaml
 
 helmCharts:
   - name: nginx
