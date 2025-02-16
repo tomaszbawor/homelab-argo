@@ -25,3 +25,9 @@ argocd-autopilot repo bootstrap --recover
 ```
 kubectl port-forward -n argocd svc/argocd-server 8080:80
 ```
+
+# TODO: 
+
+Currently I do not know how to store sops encrypted json files to be interpreted by argo. Temporary we can add secrets by hand. 
+
+In the future I would like to encrypt them using SOPS
