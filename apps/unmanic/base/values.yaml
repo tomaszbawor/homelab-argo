@@ -23,12 +23,12 @@ persistence:
   config:
     enabled: true
     storageClass: longhorn
-    accessMode: ReadWriteOnce
+    accessMode: ReadWriteMany
   library:
     enabled: true
     existingClaim: servarr-jellyfin-media
   cache:
     enabled: true
     storageClass: longhorn
-    accessMode: ReadWriteOnce
+    accessMode: ReadWriteMany
     size: 5Gi
