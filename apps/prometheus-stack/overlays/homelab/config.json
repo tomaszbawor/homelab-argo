@@ -1,0 +1,11 @@
+{
+  "appName": "prometheus-stack",
+  "userGivenName": "prometheus-stack",
+  "destNamespace": "prometheus-stack",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/prometheus-stack/overlays/homelab",
+  "srcRepoURL": "https://github.com/tomaszbawor/homelab-argo.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
