@@ -1,0 +1,2 @@
+persistence:
+  defaultClassReplicaCount: 1 # One Node so default replicas set to 1

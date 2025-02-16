@@ -8,6 +8,7 @@ helmCharts:
     namespace: longhorn-system
     version: 1.8.0
     includeCRDs: true
+    valuesFile: ./values.yaml
 
 resources:
   - ./ns.yaml
