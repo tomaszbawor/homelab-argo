@@ -3,11 +3,12 @@ kind: Kustomization
 
 helmCharts:
   - name: nginx
-    repo: https://kubernetes.github.io/ingress-nginx
+    repo: oci://kubernetes.github.io/ingress-nginx
     releaseName: nginx
     namespace: ingress-nginx
     version: "4.12.0"
     valuesFile: values.yaml
+    includeCRDs: true
 
 resources:
   - ./ns.yaml
