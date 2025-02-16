@@ -57,7 +57,7 @@ qbittorrent:
     accessMode: ReadWriteMany
 prowlarr:
   image:
-    tag: 1.25.4
+    tag: 1.30.2
     repository: lscr.io/linuxserver/prowlarr
   ingress:
     enabled: true
