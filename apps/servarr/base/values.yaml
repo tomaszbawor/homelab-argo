@@ -80,7 +80,7 @@ prowlarr:
     accessMode: ReadWriteMany
 jellyseerr:
   image:
-    tag: 2.0.1
+    tag: 2.3.0
     repository: docker.io/fallenbagel/jellyseerr
   ingress:
     enabled: true
