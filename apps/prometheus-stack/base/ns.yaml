@@ -4,10 +4,3 @@ metadata:
   name: prometheus-stack
   labels:
     app.kubernetes.io/name: prometheus-stack
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: loki
-  labels:
-    app.kubernetes.io/name: loki
