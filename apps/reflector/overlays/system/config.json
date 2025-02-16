@@ -1,0 +1,11 @@
+{
+  "appName": "reflector",
+  "userGivenName": "reflector",
+  "destNamespace": "kube-system",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/reflector/overlays/system",
+  "srcRepoURL": "https://github.com/tomaszbawor/homelab-argo.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
