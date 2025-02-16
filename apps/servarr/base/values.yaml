@@ -1,4 +1,7 @@
 jellyfin:
+  image:
+    tag: 10.10.1
+    repository: lscr.io/linuxserver/jellyfin
   service:
     externalTrafficPolicy: null
   ingress:
@@ -20,6 +23,9 @@ jellyfin:
     media:
       existingClaim: servarr-jellyfin-media
 sonarr:
+  image:
+    tag: 4.0.10
+    repository: lscr.io/linuxserver/sonarr
   ingress:
     enabled: true
     className: nginx
@@ -40,6 +46,9 @@ sonarr:
     size: 2Gi
     accessMode: ReadWriteMany
 qbittorrent:
+  image:
+    tag: 4.6.7
+    repository: lscr.io/linuxserver/qbittorrent
   ingress:
     enabled: false
   persistence:
@@ -47,6 +56,9 @@ qbittorrent:
     size: 2Gi
     accessMode: ReadWriteMany
 prowlarr:
+  image:
+    tag: 1.25.4
+    repository: lscr.io/linuxserver/prowlarr
   ingress:
     enabled: true
     className: nginx
@@ -67,6 +79,9 @@ prowlarr:
     size: 2Gi
     accessMode: ReadWriteMany
 jellyseerr:
+  image:
+    tag: 2.0.1
+    repository: docker.io/fallenbagel/jellyseerr
   ingress:
     enabled: true
     className: nginx
@@ -87,6 +102,9 @@ jellyseerr:
     size: 2Gi
     accessMode: ReadWriteMany
 bazarr:
+  image:
+    tag: 1.4.5
+    repository: lscr.io/linuxserver/bazarr
   ingress:
     enabled: true
     className: "nginx"
@@ -107,6 +125,9 @@ bazarr:
     size: 2Gi
     accessMode: ReadWriteMany
 radarr:
+  image:
+    tag: 5.14.0
+    repository: lscr.io/linuxserver/radarr
   ingress:
     enabled: true
     className: "nginx"
@@ -127,6 +148,9 @@ radarr:
     size: 2Gi
     accessMode: ReadWriteMany
 lidarr:
+  image:
+    tag: 2.7.1
+    repository: lscr.io/linuxserver/lidarr
   ingress:
     className: nginx
     enabled: true
@@ -147,6 +171,9 @@ lidarr:
     size: 2Gi
     accessMode: ReadWriteMany
 readarr:
+  image:
+    tag: 0.4.2-develop
+    repository: lscr.io/linuxserver/readarr
   ingress:
     enabled: true
     className: nginx
