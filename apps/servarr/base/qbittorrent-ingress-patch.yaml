@@ -18,7 +18,8 @@ spec:
           - backend:
               service:
                 name: servarr-qbittorrent-web
-                port: {}
+                port: 8080
+
             path: /
             pathType: ImplementationSpecific
   tls:
