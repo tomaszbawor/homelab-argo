@@ -6,6 +6,12 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: ArgoCD Dashboard
+    gethomepage.dev/group: Tools
+    gethomepage.dev/icon: argocd.png
+    gethomepage.dev/name: ArgoCD
+    gethomepage.dev/pod-selector: " "
 spec:
   ingressClassName: nginx
   rules:
