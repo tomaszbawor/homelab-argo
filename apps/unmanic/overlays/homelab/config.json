@@ -1,7 +1,7 @@
 {
   "appName": "unmanic",
   "userGivenName": "unmanic",
-  "destNamespace": "unmanic",
+  "destNamespace": "servarr",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "apps/unmanic/overlays/homelab",
   "srcRepoURL": "https://github.com/tomaszbawor/homelab-argo.git",

@@ -5,6 +5,6 @@ helmCharts:
   - name: unmanic
     repo: https://vhdirk.github.io/helm-charts
     releaseName: unmanic
-    namespace: unmanic
+    namespace: servarr
     version: "0.1.4"
     valuesFile: values.yaml
