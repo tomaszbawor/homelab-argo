@@ -14,6 +14,6 @@ helmCharts:
   - name: loki
     repo: https://grafana.github.io/helm-charts
     releaseName: loki
-    namespace: prometheus-stack
+    namespace: loki
     version: "6.27.0"
     valuesFile: ./loki-values.yaml
