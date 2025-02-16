@@ -1,5 +1,5 @@
 image:
-  tag: "0.2.8"
+  tag: "0.2.7"
   repository: josh5/unmanic
 ingress:
   main:
