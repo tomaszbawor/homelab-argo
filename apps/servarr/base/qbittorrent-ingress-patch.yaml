@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  labels:
+    app.kubernetes.io/instance: homelab-servarr
+    app.kubernetes.io/name: qbittorrent
+  name: servarr-qbittorrent
+  namespace: servarr
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: qbittorrent.entropymaker.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: servarr-qbittorrent-web
+                port: {}
+            path: /
+            pathType: ImplementationSpecific
+  tls:
+    - hosts:
+        - qbittorrent.entropymaker.com
+      secretName: entropymaker-com-tls
