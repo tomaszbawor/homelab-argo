@@ -1,5 +1,5 @@
 {
-  "appName": "ingress-nginx",
+  "appName": "nginx",
   "userGivenName": "ingress-nginx",
   "destNamespace": "ingress-nginx",
   "destServer": "https://kubernetes.default.svc",
