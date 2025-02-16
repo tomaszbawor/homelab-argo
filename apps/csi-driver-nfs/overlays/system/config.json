@@ -1,0 +1,11 @@
+{
+  "appName": "csi-driver-nfs",
+  "userGivenName": "csi-driver-nfs",
+  "destNamespace": "kube-system",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/csi-driver-nfs/overlays/system",
+  "srcRepoURL": "https://github.com/tomaszbawor/homelab-argo.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}

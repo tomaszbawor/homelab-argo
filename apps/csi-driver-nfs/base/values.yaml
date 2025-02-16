@@ -1,0 +1,5 @@
+values:
+  controller:
+    enabled: true
+  node:
+    enabled: true
