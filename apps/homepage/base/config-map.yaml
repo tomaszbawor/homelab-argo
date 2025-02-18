@@ -48,6 +48,10 @@ data:
             icon: jellyfin.png
             href: "https://jellyfin.entropymaker.com"
             description: Media platform
+        - Jellyseerr:
+            icon: jellyseerr.png
+            href: "https://jellyseerr.entropymaker.com"
+            description: Media Request Platform
         - Sonarr: 
             icon: sonarr.png
             href: "https://sonarr.entropymaker.com"
@@ -73,10 +77,8 @@ data:
           showLabel: true
           label: "cluster"
         nodes:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
+          show: false
+
     - resources:
         backend: resources
         expanded: true
@@ -100,4 +102,3 @@ data:
         labels: true
         nodes: true
   docker.yaml: ""
-
