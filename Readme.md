@@ -9,7 +9,7 @@
 I am installing argo by argocd-autopilot
 
 
-## Recovering From an Existing Repository¶
+## Recovering From an Existing Repository
 If, for any reason, something happens to your argo-cd installation, you can recover from an existing repository using the --recover flag.
 
 This should re-apply Argo-CD to the cluster, then create the autopilot-bootstrap application, which will restore all of the other applications in your repository.
@@ -20,7 +20,18 @@ export GIT_TOKEN=xxx
 
 argocd-autopilot repo bootstrap --recover
 ```
+Next step is to decode the secret in the cert manager app and apply it. 
+```
+sops -d cloudflare-api-token.yaml > secret.yaml
+kubectl apply -f secret.yaml
+```
+> [!IMPORTANT]
+> You must have configured proper secret in sops. I am storing mine in 1Password vault
 
+Last step is to manualy restart argocd pods in order for them to reload configuration. 
+
+This is needed in order to properly configure argocd ingress controller with HTTPS. 
+                                                                         i
 # Port forward
 ```
 kubectl port-forward -n argocd svc/argocd-server 8080:80
