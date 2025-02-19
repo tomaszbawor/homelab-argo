@@ -57,7 +57,28 @@ This will manually put secret into the cluster and enable cert manager to issue 
 
 In order to check the output of the kustomize and helmchart we can run command in the overlay folder of the application that we want to check. 
 ```bash
-kustomize build --enable-helm
+kustomize build --enable-helm > result.yaml
 ```
 This will result in creation of the `chart` folder in our application. 
 This folder will contain all of the resulted helmcharts with kustomize modification that we applied.
+
+The `result.yaml` file will contain all of the resources that will be created with applied the helmchart template. This is usefull for checking what is the result of the configuration. 
+
+# Longhorn Issues
+
+I have come across a problem when I would need to reinstall longhorn. 
+
+Problem is that the longhorn is running the uninstall job which requires to have specific flag set up in the configuration. 
+
+This is easy when you have working UI but I had problem that the ui server did not start yet. 
+
+In order to work around that you may need to manualy apply the change of that flag by applying kubernetes resourdce. 
+
+```yaml 
+apiVersion: longhorn.io/v1beta1
+kind: Setting
+metadata:
+  name: deleting-confirmation-flag
+  namespace: longhorn-system
+value: "true"
+```
