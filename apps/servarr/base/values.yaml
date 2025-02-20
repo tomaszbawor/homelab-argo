@@ -47,7 +47,7 @@ sonarr:
     accessMode: ReadWriteMany
 qbittorrent:
   image:
-    tag: 20.04.1
+    tag: 5.0.4
     repository: lscr.io/linuxserver/qbittorrent
   ingress:
     enabled: false
