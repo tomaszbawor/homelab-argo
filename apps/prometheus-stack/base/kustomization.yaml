@@ -11,5 +11,5 @@ helmCharts:
     releaseName: prometheus-stack
     namespace: prometheus-stack
     includeCRDs: true
-    version: "69.3.2"
+    version: "69.3.3"
     valuesFile: ./prom-stack-values.yaml
