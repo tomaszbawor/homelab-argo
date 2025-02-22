@@ -28,7 +28,7 @@ spec:
             - name: UMASK_SET
               value: "002"
             - name: serverIP
-              value: "0.0.0.0"
+              value: "tdarr"
             - name: serverPort
               value: "8266"
             - name: webUIPort
@@ -43,7 +43,11 @@ spec:
               value: "MyInternalNode"
           volumeMounts:
             - name: tdarr-configs
-              mountPath: /app
+              mountPath: /app/configs
+            - name: tdarr-configs
+              mountPath: /app/logs
+            - name: tdarr-configs
+              mountPath: /app/server
             - name: media
               mountPath: /media
             - name: transcode-cache

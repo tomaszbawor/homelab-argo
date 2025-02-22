@@ -39,7 +39,11 @@ spec:
             # GPU-related environment variables removed
           volumeMounts:
             - name: tdarr-configs
-              mountPath: /app
+              mountPath: /app/configs
+            - name: tdarr-configs
+              mountPath: /app/logs
+            - name: tdarr-configs
+              mountPath: /app/server
             - name: media
               mountPath: /media
             - name: transcode-cache
