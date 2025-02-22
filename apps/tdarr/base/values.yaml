@@ -29,6 +29,10 @@ persistence:
   media:
     enabled: true
     existingClaim: servarr-jellyfin-media
+  shared:
+    enabled: true
+    medium: Memory
+    sizeLimit: 4Gi
 
 node:
   image:
