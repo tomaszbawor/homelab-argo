@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: tdarr-node
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: tdarr-node
@@ -47,14 +47,12 @@ spec:
             - name: transcode-cache
               mountPath: /shared
       volumes:
-        # We'll keep Node logs ephemeral (change if you want to store them):
         - name: tdarr-configs
           persistentVolumeClaim:
             claimName: tdarr-config
         - name: media
           persistentVolumeClaim:
             claimName: servarr-jellyfin-media
-        # In-memory transcode cache
         - name: transcode-cache
           persistentVolumeClaim:
             claimName: tdarr-shared
