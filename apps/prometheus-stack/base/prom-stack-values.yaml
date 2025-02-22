@@ -1,7 +1,3 @@
-crds:
-  upgradeJob:
-    enabled: true
-
 grafana:
   ingress:
     enabled: true

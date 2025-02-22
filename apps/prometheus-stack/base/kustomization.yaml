@@ -18,3 +18,4 @@ helmCharts:
     releaseName: prometheus-operator-crds
     namespace: prometheus-stack
     version: "18.0.0"
+    valuesFile: ./crds-values.yaml
