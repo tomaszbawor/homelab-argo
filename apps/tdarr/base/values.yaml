@@ -23,9 +23,11 @@ persistance:
   config:
     enabled: true
     accessMode: ReadWriteMany
+    storageClass: longhorn
     size: 2Gi
     retain: true
   media:
+    enabled: true
     existingClaim: servarr-jellyfin-media
 
 node:
