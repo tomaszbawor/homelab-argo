@@ -1,0 +1,4 @@
+persistence:
+  enabled: true
+  storageClass: "longhorn" # Change based on your storage class
+  size: 10G
