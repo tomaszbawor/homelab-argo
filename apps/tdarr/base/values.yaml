@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/haveagitgat/tdarr
-  tag: 2.00.18.2
+  tag: 2.33.01
 
 ingress:
   main:
@@ -33,4 +33,4 @@ persistance:
 node:
   image:
     repository: ghcr.io/haveagitgat/tdarr_node
-    tag: 2.00.18.2
+    tag: 2.33.01
