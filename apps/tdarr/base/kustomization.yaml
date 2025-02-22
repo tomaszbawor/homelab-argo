@@ -2,10 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: servarr
 
-helmCharts:
-  - name: tdarr
-    repo: https://vhdirk.github.io/helm-charts
-    releaseName: tdarr
-    namespace: servarr
-    version: "5.0.5"
-    valuesFile: values.yaml
+resources:
+  - ./tdarr-deployment.yaml
+  - ./node-deployment.yaml
+  - ./pvc-config.yaml
+  - ./service.yaml
+  - ./ingress.yaml

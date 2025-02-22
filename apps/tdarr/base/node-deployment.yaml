@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tdarr-node
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tdarr-node
+  template:
+    metadata:
+      labels:
+        app: tdarr-node
+    spec:
+      containers:
+        - name: tdarr-node
+          image: ghcr.io/haveagitgat/tdarr_node:2.33.01
+          # No exposed ports needed on the node itself
+          env:
+            - name: TZ
+              value: "Europe/London"
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: UMASK_SET
+              value: "002"
+            - name: nodeName
+              value: "MyExternalNode"
+            # IMPORTANT: Use the Service name "tdarr" for the serverIP
+            - name: serverIP
+              value: "tdarr"
+            - name: serverPort
+              value: "8266"
+            - name: inContainer
+              value: "true"
+            - name: ffmpegVersion
+              value: "6"
+            # GPU-related environment variables removed
+          volumeMounts:
+            - name: tdarr-configs
+              mountPath: /app
+            - name: media
+              mountPath: /media
+            - name: transcode-cache
+              mountPath: /shared
+      volumes:
+        # We'll keep Node logs ephemeral (change if you want to store them):
+        - name: tdarr-configs
+          persistentVolumeClaim:
+            claimName: tdarr-config
+        - name: media
+          persistentVolumeClaim:
+            claimName: servarr-jellyfin-media
+        # In-memory transcode cache (4Gi)
+        - name: transcode-cache
+          emptyDir:
+            medium: Memory
+            sizeLimit: 4Gi

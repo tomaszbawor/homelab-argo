@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tdarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tdarr
+  template:
+    metadata:
+      labels:
+        app: tdarr
+    spec:
+      containers:
+        - name: tdarr
+          image: ghcr.io/haveagitgat/tdarr:2.33.01
+          ports:
+            - containerPort: 8265 # Web UI
+            - containerPort: 8266 # Tdarr Server
+          env:
+            - name: TZ
+              value: "Europe/London"
+            - name: PUID
+              value: "1000" # Change as needed
+            - name: PGID
+              value: "1000" # Change as needed
+            - name: UMASK_SET
+              value: "002"
+            - name: serverIP
+              value: "0.0.0.0"
+            - name: serverPort
+              value: "8266"
+            - name: webUIPort
+              value: "8265"
+            - name: internalNode
+              value: "true"
+            - name: inContainer
+              value: "true"
+            - name: ffmpegVersion
+              value: "6"
+            - name: nodeName
+              value: "MyInternalNode"
+          volumeMounts:
+            - name: tdarr-configs
+              mountPath: /app
+            - name: media
+              mountPath: /media
+            - name: transcode-cache
+              mountPath: /shared
+      volumes:
+        - name: tdarr-configs
+          persistentVolumeClaim:
+            claimName: tdarr-config
+        # Existing claim for media
+        - name: media
+          persistentVolumeClaim:
+            claimName: servarr-jellyfin-media
+        # /temp in-memory (4Gi limit)
+        - name: transcode-cache
+          emptyDir:
+            medium: Memory
+            sizeLimit: 4Gi
