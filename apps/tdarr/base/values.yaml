@@ -19,7 +19,7 @@ ingress:
           - "tdarr.entropymaker.com"
         secretName: entropymaker-com-tls
 
-persistance:
+persistence:
   config:
     enabled: true
     accessMode: ReadWriteMany
