@@ -1,0 +1,34 @@
+image:
+  repository: ghcr.io/haveagitgat/tdarr
+  tag: 2.00.18.2
+
+ingress:
+  main:
+    enabled: true
+    className: nginx
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+      - host: tdarr.entropymaker.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - "tdarr.entropymaker.com"
+        secretName: entropymaker-com-tls
+
+persistance:
+  config:
+    enabled: true
+    accessMode: ReadWriteMany
+    size: 2Gi
+    retain: true
+  media:
+    existingClaim: servarr-jellyfin-media
+
+node:
+  image:
+    repository: ghcr.io/haveagitgat/tdarr_node
+    tag: 2.00.18.2

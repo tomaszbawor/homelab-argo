@@ -1,0 +1,11 @@
+{
+  "appName": "tdarr",
+  "userGivenName": "tdarr",
+  "destNamespace": "servarr",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/tdarr/overlays/homelab",
+  "srcRepoURL": "https://github.com/tomaszbawor/homelab-argo.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
