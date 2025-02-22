@@ -10,6 +10,11 @@ helmCharts:
     repo: https://prometheus-community.github.io/helm-charts
     releaseName: prometheus-stack
     namespace: prometheus-stack
-    includeCRDs: true
+    includeCRDs: false
     version: "69.4.1"
     valuesFile: ./prom-stack-values.yaml
+  - name: prometheus-operator-crds
+    repo: https://prometheus-community.github.io/helm-charts
+    releaseName: prometheus-operator-crds
+    namespace: prometheus-stack
+    version: "18.0.0"
