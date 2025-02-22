@@ -60,8 +60,6 @@ spec:
         - name: media
           persistentVolumeClaim:
             claimName: servarr-jellyfin-media
-        # /temp in-memory (4Gi limit)
         - name: transcode-cache
-          emptyDir:
-            medium: Memory
-            sizeLimit: 4Gi
+          persistentVolumeClaim:
+            claimName: tdarr-shared
