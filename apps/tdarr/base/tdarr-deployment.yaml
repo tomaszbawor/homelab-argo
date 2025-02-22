@@ -34,13 +34,11 @@ spec:
             - name: webUIPort
               value: "8265"
             - name: internalNode
-              value: "true"
+              value: "false"
             - name: inContainer
               value: "true"
             - name: ffmpegVersion
               value: "6"
-            - name: nodeName
-              value: "MyInternalNode"
           volumeMounts:
             - name: tdarr-configs
               mountPath: /app/configs

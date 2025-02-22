@@ -27,7 +27,6 @@ spec:
               value: "002"
             - name: nodeName
               value: "MyExternalNode"
-            # IMPORTANT: Use the Service name "tdarr" for the serverIP
             - name: serverIP
               value: "tdarr"
             - name: serverPort
@@ -36,7 +35,6 @@ spec:
               value: "true"
             - name: ffmpegVersion
               value: "6"
-            # GPU-related environment variables removed
           volumeMounts:
             - name: tdarr-configs
               mountPath: /app/configs
