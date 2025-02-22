@@ -19,6 +19,9 @@ ingress:
           - "tdarr.entropymaker.com"
         secretName: entropymaker-com-tls
 
+env:
+  serverIP: "servarr-tdarr"
+  serverPort: 8266
 persistence:
   config:
     enabled: true
