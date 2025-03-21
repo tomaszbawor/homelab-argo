@@ -4,3 +4,4 @@ metadata:
   name: longhorn-system
   labels:
     app.kubernetes.io/name: longhorn-system
+    pod-security.kubernetes.io/enforce: privileged

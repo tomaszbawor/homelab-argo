@@ -4,3 +4,4 @@ metadata:
   name: ingress-nginx
   labels:
     app.kubernetes.io/name: ingress-nginx
+    pod-security.kubernetes.io/enforce: privileged
