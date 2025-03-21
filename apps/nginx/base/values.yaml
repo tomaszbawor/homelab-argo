@@ -2,6 +2,7 @@ controller:
   service:
     type: LoadBalancer
     loadBalancerIP: 192.168.1.200
+    externalTrafficPolicy: Cluster
     nodePorts:
       http: 32080
       https: 32443
