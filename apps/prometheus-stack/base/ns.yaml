@@ -4,3 +4,4 @@ metadata:
   name: prometheus-stack
   labels:
     app.kubernetes.io/name: prometheus-stack
+    pod-security.kubernetes.io/enforce: privileged
