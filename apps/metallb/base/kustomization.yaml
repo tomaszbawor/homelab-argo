@@ -8,6 +8,7 @@ helmCharts:
     namespace: metallb-system
     version: 0.14.9
     includeCRDs: true
+    valuesFile: ./values.yaml
 
 resources:
   - ./ns.yaml
