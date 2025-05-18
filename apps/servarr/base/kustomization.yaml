@@ -12,5 +12,5 @@ helmCharts:
     repo: https://charts.kubito.dev
     releaseName: servarr
     namespace: servarr
-    version: "1.0.7"
+    version: "1.0.8"
     valuesFile: values.yaml
