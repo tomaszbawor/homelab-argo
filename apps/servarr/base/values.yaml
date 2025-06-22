@@ -175,7 +175,7 @@ lidarr:
 readarr:
   enabled: false
   image:
-    tag: 0.4.16-develop
+    tag: 0.4.18-develop
     repository: lscr.io/linuxserver/readarr
   ingress:
     enabled: true
