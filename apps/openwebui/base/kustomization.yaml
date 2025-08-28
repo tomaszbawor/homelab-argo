@@ -7,7 +7,7 @@ helmCharts:
     repo: https://helm.openwebui.com/
     releaseName: open-webui
     namespace: llm
-    version: "7.0.0"
+    version: "7.7.0"
     valuesFile: values.yaml
 
 resources:
