@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/haveagitgat/tdarr
-  tag: 2.45.01
+  tag: 2.46.01
 
 ingress:
   main:
