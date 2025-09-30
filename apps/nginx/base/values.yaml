@@ -1,4 +1,6 @@
 controller:
+  updateStrategy: 
+    type: Recreate
   service:
     type: LoadBalancer
     loadBalancerIP: 192.168.1.200
