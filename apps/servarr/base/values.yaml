@@ -18,7 +18,7 @@ jellyfin:
   persistence:
     config:
       storageClass: longhorn
-      size: 2Gi
+      size: 4Gi
       accessMode: ReadWriteMany
     media:
       existingClaim: servarr-jellyfin-media
