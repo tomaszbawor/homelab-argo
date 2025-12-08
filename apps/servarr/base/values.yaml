@@ -201,3 +201,27 @@ flaresolverr:
   image:
     tag: v3.4.6
     repository: ghcr.io/flaresolverr/flaresolverr
+cleanuparr:
+  enabled: true
+  image: 
+    repository:  ghcr.io/cleanuparr/cleanuparr
+    tag: latest
+  ingress:
+    enabled: true
+    className: nginx
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+      - host: cleanuparr.entropymaker.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - "cleanuparr.entropymaker.com"
+        secretName: entropymaker-com-tls
+  persistence:
+    storageClass: longhorn
+    size: 2Gi
+    accessMode: ReadWriteMany
