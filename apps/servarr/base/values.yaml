@@ -199,5 +199,5 @@ readarr:
 flaresolverr:
   enabled: true
   image:
-    tag: v3.3.21
+    tag: v3.4.6
     repository: ghcr.io/flaresolverr/flaresolverr
