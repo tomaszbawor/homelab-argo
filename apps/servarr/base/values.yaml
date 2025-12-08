@@ -196,3 +196,8 @@ readarr:
     storageClass: longhorn
     size: 2Gi
     accessMode: ReadWriteMany
+flaresolverr:
+  enabled: true
+  image:
+    tag: v3.3.21
+    repository: ghcr.io/flaresolverr/flaresolverr
