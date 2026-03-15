@@ -1,9 +1,9 @@
 {
-  "appName": "homepage",
-  "userGivenName": "homepage",
-  "destNamespace": "homepage",
+  "appName": "hajimari",
+  "userGivenName": "hajimari",
+  "destNamespace": "hajimari",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "apps/homepage/overlays/homelab",
+  "srcPath": "apps/hajimari/overlays/homelab",
   "srcRepoURL": "https://github.com/tomaszbawor/homelab-argo.git",
   "srcTargetRevision": "",
   "labels": null,

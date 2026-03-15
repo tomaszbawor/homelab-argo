@@ -10,6 +10,11 @@ jellyfin:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      hajimari.io/enable: "true"
+      hajimari.io/appName: Jellyfin
+      hajimari.io/group: Media
+      hajimari.io/icon: mdi:multimedia
+      hajimari.io/info: Media Server
     hosts: ["jellyfin.entropymaker.com"]
     tls:
       - hosts:
@@ -32,6 +37,11 @@ sonarr:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      hajimari.io/enable: "true"
+      hajimari.io/appName: Sonarr
+      hajimari.io/group: Media
+      hajimari.io/icon: mdi:television
+      hajimari.io/info: TV Show Management
     hosts:
       - host: sonarr.entropymaker.com
         paths:
@@ -65,6 +75,11 @@ prowlarr:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      hajimari.io/enable: "true"
+      hajimari.io/appName: Prowlarr
+      hajimari.io/group: Media
+      hajimari.io/icon: mdi:radar
+      hajimari.io/info: Indexer Manager
     hosts:
       - host: prowlarr.entropymaker.com
         paths:
@@ -88,6 +103,11 @@ jellyseerr:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      hajimari.io/enable: "true"
+      hajimari.io/appName: Jellyseerr
+      hajimari.io/group: Media
+      hajimari.io/icon: mdi:movie-search
+      hajimari.io/info: Media Requests
     hosts:
       - host: jellyseerr.entropymaker.com
         paths:
@@ -112,6 +132,11 @@ bazarr:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      hajimari.io/enable: "true"
+      hajimari.io/appName: Bazarr
+      hajimari.io/group: Media
+      hajimari.io/icon: mdi:subtitles
+      hajimari.io/info: Subtitle Management
     hosts:
       - host: bazarr.entropymaker.com
         paths:
@@ -135,6 +160,11 @@ radarr:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      hajimari.io/enable: "true"
+      hajimari.io/appName: Radarr
+      hajimari.io/group: Media
+      hajimari.io/icon: mdi:filmstrip
+      hajimari.io/info: Movie Management
     hosts:
       - host: radarr.entropymaker.com
         paths:
@@ -159,6 +189,11 @@ lidarr:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      hajimari.io/enable: "true"
+      hajimari.io/appName: Lidarr
+      hajimari.io/group: Media
+      hajimari.io/icon: mdi:music
+      hajimari.io/info: Music Management
     hosts:
       - host: lidarr.entropymaker.com
         paths:
@@ -183,6 +218,11 @@ readarr:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      hajimari.io/enable: "true"
+      hajimari.io/appName: Readarr
+      hajimari.io/group: Media
+      hajimari.io/icon: mdi:book-open-variant
+      hajimari.io/info: Book Management
     hosts:
       - host: readarr.entropymaker.com
         paths:
@@ -212,6 +252,11 @@ cleanuparr:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      hajimari.io/enable: "true"
+      hajimari.io/appName: Cleanuparr
+      hajimari.io/group: Media
+      hajimari.io/icon: mdi:broom
+      hajimari.io/info: Library Cleanup
     hosts:
       - host: cleanuparr.entropymaker.com
         paths:

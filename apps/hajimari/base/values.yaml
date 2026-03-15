@@ -1,0 +1,72 @@
+env:
+  TZ: "Europe/Warsaw"
+
+hajimari:
+  defaultEnable: true
+  namespaceSelector:
+    matchNames:
+      - servarr
+      - pihole
+      - longhorn-system
+      - argocd
+      - hajimari
+  title: Homelab
+  name: "Tomasz"
+  lightTheme: gazette
+  darkTheme: horizon
+  showGreeting: true
+  showAppGroups: true
+  showAppUrls: true
+  showAppInfo: true
+  showAppStatus: true
+  defaultAppIcon: mdi:application
+  showBookmarkGroups: true
+  showGlobalBookmarks: true
+  alwaysTargetBlank: false
+  defaultSearchProvider: Google
+  searchProviders:
+    - name: Google
+      token: g
+      icon: simple-icons:google
+      searchUrl: https://www.google.com/search?q={query}
+      url: https://www.google.com
+  globalBookmarks:
+    - group: Developer
+      bookmarks:
+        - name: GitHub
+          url: https://github.com/
+    - group: Social
+      bookmarks:
+        - name: Reddit
+          url: https://reddit.com/
+        - name: Wykop
+          url: https://wykop.pl/
+    - group: Entertainment
+      bookmarks:
+        - name: YouTube
+          url: https://youtube.com/
+
+ingress:
+  main:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+      - host: hajimari.entropymaker.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+      - hosts:
+          - hajimari.entropymaker.com
+        secretName: entropymaker-com-tls
+
+persistence:
+  data:
+    enabled: true
+    type: pvc
+    storageClass: longhorn
+    accessMode: ReadWriteOnce
+    size: 1Gi

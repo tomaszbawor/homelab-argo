@@ -4,6 +4,11 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hajimari.io/enable: "true"
+    hajimari.io/appName: qBittorrent
+    hajimari.io/group: Media
+    hajimari.io/icon: mdi:download-circle
+    hajimari.io/info: Torrent Downloads
   labels:
     app.kubernetes.io/instance: homelab-servarr
     app.kubernetes.io/name: qbittorrent

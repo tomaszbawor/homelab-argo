@@ -9,6 +9,11 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hajimari.io/enable: "true"
+    hajimari.io/appName: Pi-hole
+    hajimari.io/group: Services
+    hajimari.io/icon: mdi:pi-hole
+    hajimari.io/info: DNS Ad Blocker
   hosts:
     - pihole.entropymaker.com
   path: /
