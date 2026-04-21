@@ -21,6 +21,9 @@ ingress:
     - hosts:
         - pihole.entropymaker.com
       secretName: entropymaker-com-tls
+image: 
+  repository: "pihole/pihole"
+  tag: "2026.04.0"
 persistentVolumeClaim:
   enabled: true
   storageClass: "longhorn"
