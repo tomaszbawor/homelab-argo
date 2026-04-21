@@ -236,6 +236,37 @@ readarr:
     storageClass: longhorn
     size: 2Gi
     accessMode: ReadWriteMany
+
+seerr:
+  enabled: false
+  image:
+    tag: v3.2.0
+    repository: ghcr.io/seerr-team/serr
+  ingress:
+    enabled: true
+    className: nginx
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      hajimari.io/enable: "true"
+      hajimari.io/appName: Seerr
+      hajimari.io/group: Media
+      hajimari.io/icon: mdi:book-open-variant
+      hajimari.io/info: Media Management
+    hosts:
+      - host: seerr.entropymaker.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - "seerr.entropymaker.com"
+        secretName: entropymaker-com-tls
+  persistence:
+    storageClass: longhorn
+    size: 1Gi
+    accessMode: ReadWriteMany
+
 flaresolverr:
   enabled: true
   image:
