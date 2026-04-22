@@ -29,7 +29,7 @@ jellyfin:
       existingClaim: servarr-jellyfin-media
 sonarr:
   image:
-    tag: 4.0.16
+    tag: 4.0.17
     repository: lscr.io/linuxserver/sonarr
   ingress:
     enabled: true
