@@ -8,6 +8,8 @@
 
 I am installing argo by argocd-autopilot
 
+If Argo CD fails while applying the `applicationsets.argoproj.io` CRD with an error like `metadata.annotations: Too long`, make sure the `bootstrap/argo-cd.yaml` application uses `ServerSideApply=true`. Large CRDs can exceed the client-side apply annotation limit.
+
 
 ## Recovering From an Existing Repository
 If, for any reason, something happens to your argo-cd installation, you can recover from an existing repository using the --recover flag.

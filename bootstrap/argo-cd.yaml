@@ -27,6 +27,7 @@ spec:
       selfHeal: true
     syncOptions:
       - allowEmpty=true
+      - ServerSideApply=true
 status:
   health: {}
   summary: {}
