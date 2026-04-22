@@ -1,0 +1,62 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: servarr-bootstrap
+  namespace: servarr
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation,HookSucceeded
+spec:
+  backoffLimit: 2
+  ttlSecondsAfterFinished: 300
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: bootstrap
+          image: alpine:3.21
+          imagePullPolicy: IfNotPresent
+          command:
+            - /bin/sh
+            - -c
+            - apk add --no-cache curl jq >/dev/null && /scripts/bootstrap.sh
+          env:
+            - name: SONARR_URL
+              value: http://servarr-sonarr
+            - name: PROWLARR_URL
+              value: http://servarr-prowlarr:9696
+            - name: QBITTORRENT_URL
+              value: http://servarr-qbittorrent-web:8080
+            - name: QBITTORRENT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: servarr-bootstrap
+                  key: qbittorrent-username
+                  optional: true
+            - name: QBITTORRENT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: servarr-bootstrap
+                  key: qbittorrent-password
+                  optional: true
+          volumeMounts:
+            - name: script
+              mountPath: /scripts
+              readOnly: true
+            - name: sonarr-config
+              mountPath: /config/sonarr
+              readOnly: true
+            - name: prowlarr-config
+              mountPath: /config/prowlarr
+              readOnly: true
+      volumes:
+        - name: script
+          configMap:
+            name: servarr-bootstrap-script
+            defaultMode: 0755
+        - name: sonarr-config
+          persistentVolumeClaim:
+            claimName: servarr-sonarr
+        - name: prowlarr-config
+          persistentVolumeClaim:
+            claimName: servarr-prowlarr

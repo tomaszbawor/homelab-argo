@@ -5,6 +5,8 @@ resources:
   - ./ns.yaml
   - ./media-pv.yaml
   - ./media-pvc.yaml
+  - ./bootstrap-script.yaml
+  - ./bootstrap-job.yaml
   - ./qbittorrent-ingress.yaml
 
 helmCharts:
