@@ -238,7 +238,7 @@ readarr:
     accessMode: ReadWriteMany
 
 seerr:
-  enabled: true
+  enabled: false
   image:
     tag: v3.2.0
     repository: ghcr.io/seerr-team/serr
