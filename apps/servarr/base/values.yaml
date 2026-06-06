@@ -1,6 +1,6 @@
 jellyfin:
   image:
-    tag: 10.11.8
+    tag: 10.11.11
     repository: lscr.io/linuxserver/jellyfin
   service:
     externalTrafficPolicy: null
