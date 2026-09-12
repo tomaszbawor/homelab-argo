@@ -270,7 +270,7 @@ seerr:
 flaresolverr:
   enabled: true
   image:
-    tag: v3.4.6
+    tag: v3.5.2
     repository: ghcr.io/flaresolverr/flaresolverr
 cleanuparr:
   enabled: true
